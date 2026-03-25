@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.11 0.025 258;
+    --foreground: 0.97 0.005 255;
+    --card: 0.16 0.03 258;
+    --card-foreground: 0.97 0.005 255;
+    --popover: 0.13 0.028 258;
+    --popover-foreground: 0.97 0.005 255;
+    --primary: 0.6 0.2 262;
+    --primary-foreground: 0.98 0.005 255;
+    --secondary: 0.19 0.035 258;
+    --secondary-foreground: 0.97 0.005 255;
+    --muted: 0.19 0.035 258;
+    --muted-foreground: 0.65 0.025 258;
+    --accent: 0.6 0.2 262;
+    --accent-foreground: 0.98 0.005 255;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.24 0.04 258;
+    --input: 0.19 0.035 258;
+    --ring: 0.6 0.2 262;
+    --chart-1: 0.6 0.2 262;
+    --chart-2: 0.55 0.18 200;
+    --chart-3: 0.45 0.15 240;
+    --chart-4: 0.75 0.15 290;
+    --chart-5: 0.65 0.2 230;
+    --sidebar: 0.13 0.028 258;
+    --sidebar-foreground: 0.97 0.005 255;
+    --sidebar-primary: 0.6 0.2 262;
+    --sidebar-primary-foreground: 0.98 0.005 255;
+    --sidebar-accent: 0.19 0.035 258;
+    --sidebar-accent-foreground: 0.97 0.005 255;
+    --sidebar-border: 0.24 0.04 258;
+    --sidebar-ring: 0.6 0.2 262;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #060e1e;
+    color: #f0f4ff;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .blue-text {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .brand-glow {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px
+      rgba(59, 130, 246, 0.3);
+  }
+
+  .glass-card {
+    background: rgba(15, 31, 61, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .glass-nav {
+    background: rgba(6, 14, 30, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+  }
+
+  .blue-glow-hover {
+    transition: all 0.3s ease;
+  }
+  .blue-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 8px 32px rgba(0, 0, 0, 0.4);
+    border-color: rgba(59, 130, 246, 0.45) !important;
+    transform: translateY(-2px);
+  }
+
+  .section-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .product-card-hover {
+    transition: all 0.35s ease;
+  }
+  .product-card-hover:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.25), 0 0 0 1px
+      rgba(59, 130, 246, 0.3);
+  }
+
+  .gallery-img {
+    transition: transform 0.45s ease;
+  }
+  .gallery-item:hover .gallery-img {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes whatsapp-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes float-particle {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-25px) rotate(180deg);
+    opacity: 0.7;
+  }
+}
+
+.whatsapp-btn-pulse {
+  animation: whatsapp-pulse 2s infinite;
+}
